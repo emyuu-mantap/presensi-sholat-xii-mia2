@@ -15,12 +15,14 @@
     content="#0f172a"
   >
 
-  <title>Presensi Sholat XII MIA 2</title>
+  <title>
+    Presensi Sholat XII MIA 2
+  </title>
 
 
-  <!-- =================================================
-       QR SCANNER
-       ================================================= -->
+  <!-- =====================================================
+       LIBRARY QR SCANNER
+       ===================================================== -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js">
@@ -28,6 +30,10 @@
 
 
   <style>
+
+    /* =====================================================
+       DASAR
+       ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -39,6 +45,7 @@
 
       margin: 0;
       padding: 0;
+
       width: 100%;
       min-height: 100%;
 
@@ -48,26 +55,32 @@
         sans-serif;
 
       background: #f1f5f9;
+
       color: #0f172a;
 
     }
 
 
     body {
+
       padding-bottom: 30px;
+
     }
 
 
-    /* =================================================
+    /* =====================================================
        HEADER
-       ================================================= */
+       ===================================================== */
 
     .header {
 
       background: #0f172a;
+
       color: white;
 
-      padding: 18px 16px;
+      padding:
+        18px
+        16px;
 
       text-align: center;
 
@@ -80,14 +93,17 @@
 
       font-size: 23px;
 
-      font-weight: 800;
+      font-weight: 900;
 
     }
 
 
     .header p {
 
-      margin: 6px 0 0;
+      margin:
+        6px
+        0
+        0;
 
       font-size: 15px;
 
@@ -96,13 +112,14 @@
     }
 
 
-    /* =================================================
+    /* =====================================================
        CONTAINER
-       ================================================= */
+       ===================================================== */
 
     .container {
 
       width: 100%;
+
       max-width: 650px;
 
       margin: 0 auto;
@@ -112,9 +129,9 @@
     }
 
 
-    /* =================================================
+    /* =====================================================
        CARD
-       ================================================= */
+       ===================================================== */
 
     .card {
 
@@ -127,29 +144,34 @@
       margin-bottom: 14px;
 
       box-shadow:
-        0 4px 18px rgba(0, 0, 0, 0.07);
+        0 4px 18px rgba(
+          0,
+          0,
+          0,
+          0.07
+        );
 
     }
 
 
-    /* =================================================
+    /* =====================================================
        LABEL
-       ================================================= */
+       ===================================================== */
 
     label {
 
       display: block;
 
-      font-weight: 700;
+      font-weight: 800;
 
       margin-bottom: 8px;
 
     }
 
 
-    /* =================================================
-       SELECT SESI
-       ================================================= */
+    /* =====================================================
+       SELECT
+       ===================================================== */
 
     select {
 
@@ -164,20 +186,22 @@
 
       background: white;
 
-      padding: 0 14px;
+      padding:
+        0
+        14px;
 
       font-size: 17px;
 
-      font-weight: 700;
+      font-weight: 800;
 
       color: #0f172a;
 
     }
 
 
-    /* =================================================
+    /* =====================================================
        BUTTON
-       ================================================= */
+       ===================================================== */
 
     button {
 
@@ -193,7 +217,7 @@
 
       font-size: 16px;
 
-      font-weight: 800;
+      font-weight: 900;
 
       cursor: pointer;
 
@@ -227,9 +251,9 @@
     }
 
 
-    /* =================================================
+    /* =====================================================
        CAMERA
-       ================================================= */
+       ===================================================== */
 
     #reader {
 
@@ -255,10 +279,6 @@
     }
 
 
-    /* =================================================
-       CAMERA STATUS
-       ================================================= */
-
     .camera-status {
 
       margin-top: 10px;
@@ -272,9 +292,9 @@
     }
 
 
-    /* =================================================
-       HASIL
-       ================================================= */
+    /* =====================================================
+       HASIL UTAMA
+       ===================================================== */
 
     .result {
 
@@ -284,42 +304,11 @@
 
       border-radius: 18px;
 
-      padding: 22px 16px;
+      padding:
+        22px
+        16px;
 
-      margin-top: 14px;
-
-    }
-
-
-    .result.success {
-
-      display: block;
-
-      background: #dcfce7;
-
-      border: 2px solid #86efac;
-
-    }
-
-
-    .result.warning {
-
-      display: block;
-
-      background: #fef3c7;
-
-      border: 2px solid #fcd34d;
-
-    }
-
-
-    .result.error {
-
-      display: block;
-
-      background: #fee2e2;
-
-      border: 2px solid #fca5a5;
+      margin-bottom: 14px;
 
     }
 
@@ -330,7 +319,44 @@
 
       background: #e0f2fe;
 
-      border: 2px solid #7dd3fc;
+      border:
+        2px solid #7dd3fc;
+
+    }
+
+
+    .result.success {
+
+      display: block;
+
+      background: #dcfce7;
+
+      border:
+        2px solid #86efac;
+
+    }
+
+
+    .result.warning {
+
+      display: block;
+
+      background: #fef3c7;
+
+      border:
+        2px solid #fcd34d;
+
+    }
+
+
+    .result.error {
+
+      display: block;
+
+      background: #fee2e2;
+
+      border:
+        2px solid #fca5a5;
 
     }
 
@@ -348,7 +374,7 @@
 
     .result-name {
 
-      font-size: 26px;
+      font-size: 27px;
 
       font-weight: 900;
 
@@ -372,26 +398,34 @@
     }
 
 
-    /* =================================================
-       LOADING
-       ================================================= */
+    /* =====================================================
+       SPINNER
+       ===================================================== */
 
     .spinner {
 
-      width: 28px;
+      width: 26px;
 
-      height: 28px;
+      height: 26px;
 
-      border: 4px solid #bae6fd;
+      border:
+        4px solid #bae6fd;
 
-      border-top-color: #0284c7;
+      border-top-color:
+        #0284c7;
 
       border-radius: 50%;
 
-      margin: 0 auto 10px;
+      margin:
+        0
+        auto
+        10px;
 
       animation:
-        spin 0.8s linear infinite;
+        spin
+        0.8s
+        linear
+        infinite;
 
     }
 
@@ -399,15 +433,18 @@
     @keyframes spin {
 
       to {
-        transform: rotate(360deg);
+
+        transform:
+          rotate(360deg);
+
       }
 
     }
 
 
-    /* =================================================
+    /* =====================================================
        RIWAYAT
-       ================================================= */
+       ===================================================== */
 
     .history-title {
 
@@ -439,7 +476,9 @@
 
       gap: 10px;
 
-      padding: 11px 0;
+      padding:
+        11px
+        0;
 
       border-bottom:
         1px solid #e2e8f0;
@@ -470,7 +509,7 @@
 
       justify-content: center;
 
-      font-weight: 800;
+      font-weight: 900;
 
       flex-shrink: 0;
 
@@ -488,9 +527,11 @@
 
     .history-name {
 
-      font-weight: 800;
+      font-weight: 900;
 
       overflow-wrap: anywhere;
+
+      line-height: 1.2;
 
     }
 
@@ -501,7 +542,9 @@
 
       color: #64748b;
 
-      margin-top: 3px;
+      margin-top: 4px;
+
+      line-height: 1.4;
 
     }
 
@@ -517,9 +560,9 @@
     }
 
 
-    /* =================================================
+    /* =====================================================
        INFO
-       ================================================= */
+       ===================================================== */
 
     .info {
 
@@ -531,6 +574,10 @@
 
       text-align: center;
 
+      padding:
+        0
+        10px;
+
     }
 
   </style>
@@ -541,9 +588,9 @@
 <body>
 
 
-  <!-- =================================================
+  <!-- =====================================================
        HEADER
-       ================================================= -->
+       ===================================================== -->
 
   <header class="header">
 
@@ -561,9 +608,9 @@
   <main class="container">
 
 
-    <!-- =================================================
+    <!-- ===================================================
          PENGATURAN
-         ================================================= -->
+         =================================================== -->
 
     <section class="card">
 
@@ -610,9 +657,9 @@
     </section>
 
 
-    <!-- =================================================
+    <!-- ===================================================
          CAMERA
-         ================================================= -->
+         =================================================== -->
 
     <section class="card">
 
@@ -631,9 +678,9 @@
     </section>
 
 
-    <!-- =================================================
-         HASIL
-         ================================================= -->
+    <!-- ===================================================
+         HASIL SCAN TERAKHIR
+         =================================================== -->
 
     <section
       id="result"
@@ -660,9 +707,9 @@
     </section>
 
 
-    <!-- =================================================
+    <!-- ===================================================
          RIWAYAT
-         ================================================= -->
+         =================================================== -->
 
     <section class="card">
 
@@ -684,10 +731,9 @@
 
     <div class="info">
 
-      Kamera tetap aktif setelah QR terbaca.<br>
+      Nama siswa ditampilkan langsung setelah QR terbaca.<br>
 
-      QR yang sedang diproses
-      tidak akan dikirim ulang.
+      Kamera tetap aktif selama proses presensi.
 
     </div>
 
@@ -698,63 +744,191 @@
   <script>
 
 
-    // =================================================
-    // API
-    // =================================================
+    // =====================================================
+    // URL APPS SCRIPT
+    // =====================================================
 
     const API_URL =
       "https://script.google.com/macros/s/AKfycbzdYWzw0WAKHSfkwiOEiCppd2KLl2pmWoSFkyzSIhEOaRiKlEapUsC_RU3IWH8efnC_Zg/exec";
 
 
-    // =================================================
+    // =====================================================
     // KONFIGURASI SCANNER
-    // =================================================
+    // =====================================================
 
     const CAMERA_FPS = 15;
 
     const QR_BOX_SIZE = 250;
 
 
-    // =================================================
-    // VARIABEL SCANNER
-    // =================================================
+    // =====================================================
+    // DATA 31 SISWA
+    // =====================================================
+
+    const STUDENTS = {
+
+      "MIA2-001":
+        "AFRIA DIKKY HIDAYAT",
+
+      "MIA2-002":
+        "AHMAD PIANOR",
+
+      "MIA2-003":
+        "ALDI SAPUTRA",
+
+      "MIA2-004":
+        "DEWI ARIANTI",
+
+      "MIA2-005":
+        "DINAR NAZARIA PUTERI",
+
+      "MIA2-006":
+        "DZAKIRA IFTINAH ZALFA",
+
+      "MIA2-007":
+        "EKA PUTRI KHOLIFIA",
+
+      "MIA2-008":
+        "HASBILAH",
+
+      "MIA2-009":
+        "HUSNUL ASHFIA",
+
+      "MIA2-010":
+        "JUMIATUN NIRMALA",
+
+      "MIA2-011":
+        "KEYZA PUTRI RAMADHANI",
+
+      "MIA2-012":
+        "LUTHFI NUR AHMADI A",
+
+      "MIA2-013":
+        "MAHMUDAH",
+
+      "MIA2-014":
+        "MARDIANA",
+
+      "MIA2-015":
+        "MARSHALINA",
+
+      "MIA2-016":
+        "MUHAMMAD FADHIL AL LAIL",
+
+      "MIA2-017":
+        "MUHAMMAD MARVEL",
+
+      "MIA2-018":
+        "NAFISA ADDAWIYAH",
+
+      "MIA2-019":
+        "NENG KHOIRIYA RAMADHANI",
+
+      "MIA2-020":
+        "NOOR SYIFA",
+
+      "MIA2-021":
+        "NOR ANISSA",
+
+      "MIA2-022":
+        "NOVIKA MARDIANA",
+
+      "MIA2-023":
+        "RAFFI AKHMAD",
+
+      "MIA2-024":
+        "RIFA ALYA MAYYADAH",
+
+      "MIA2-025":
+        "RIHHADATUL AISYAH",
+
+      "MIA2-026":
+        "SALEHAH",
+
+      "MIA2-027":
+        "SHEPYA NOVITA DILA RESTU",
+
+      "MIA2-028":
+        "SITI UMROH NUR HAYATI",
+
+      "MIA2-029":
+        "TASYA NOR AZIZAH",
+
+      "MIA2-030":
+        "YUSUF AL AMIEN",
+
+      "MIA2-031":
+        "ZAHRATUSSYIFA"
+
+    };
+
+
+    // =====================================================
+    // VARIABEL
+    // =====================================================
 
     let scanner = null;
 
     let scannerRunning = false;
 
 
-    // =================================================
-    // QR YANG SEDANG DIPROSES
-    // =================================================
+    // =====================================================
+    // KUNCI PRESENSI
     //
-    // Bukan cooldown berdasarkan waktu.
+    // Format:
     //
-    // QR dikunci selama request ke server
-    // masih berlangsung.
+    // DZUHUR|MIA2-001
+    // ASHAR|MIA2-001
     //
+    // Jadi DZUHUR dan ASHAR terpisah.
+    // =====================================================
 
-    let processingIds =
+    const completedKeys =
       new Set();
 
 
-    // =================================================
+    // =====================================================
+    // REQUEST YANG SEDANG BERJALAN
+    // =====================================================
+
+    const pendingKeys =
+      new Set();
+
+
+    // =====================================================
     // RIWAYAT
-    // =================================================
+    // =====================================================
 
     let historyData = [];
 
 
-    // =================================================
+    // =====================================================
     // AUDIO
-    // =================================================
+    // =====================================================
 
     let audioContext = null;
 
 
-    // =================================================
+    // =====================================================
+    // HASIL TIMER
+    // =====================================================
+
+    let resultTimer = null;
+
+
+    // =====================================================
+    // SESSION TERAKHIR
+    // =====================================================
+
+    let sesiSebelumnya =
+      document
+        .getElementById("sesi")
+        .value;
+
+
+    // =====================================================
     // PREPARE AUDIO
-    // =================================================
+    // =====================================================
 
     function prepareAudio() {
 
@@ -780,7 +954,9 @@
 
         }
 
-      } catch (error) {
+      }
+
+      catch (error) {
 
         console.log(
           "Audio tidak tersedia:",
@@ -792,9 +968,9 @@
     }
 
 
-    // =================================================
+    // =====================================================
     // BEEP
-    // =================================================
+    // =====================================================
 
     function beep() {
 
@@ -852,7 +1028,9 @@
 
         );
 
-      } catch (error) {
+      }
+
+      catch (error) {
 
         console.log(
           "Beep gagal:",
@@ -864,9 +1042,9 @@
     }
 
 
-    // =================================================
-    // START SCANNER
-    // =================================================
+    // =====================================================
+    // MULAI SCANNER
+    // =====================================================
 
     async function startScanner() {
 
@@ -881,9 +1059,10 @@
 
 
       const cameraStatus =
-        document.getElementById(
-          "cameraStatus"
-        );
+        document
+          .getElementById(
+            "cameraStatus"
+          );
 
 
       try {
@@ -959,8 +1138,9 @@
         cameraStatus.textContent =
           "🟢 Kamera aktif — arahkan ke QR siswa.";
 
+      }
 
-      } catch (error) {
+      catch (error) {
 
         console.error(
           "Kamera gagal:",
@@ -984,10 +1164,7 @@
 
           "",
 
-          `
-            Pastikan izin kamera
-            diberikan kepada browser.
-          `
+          "Pastikan izin kamera diberikan kepada browser."
 
         );
 
@@ -996,9 +1173,9 @@
     }
 
 
-    // =================================================
+    // =====================================================
     // STOP SCANNER
-    // =================================================
+    // =====================================================
 
     async function stopScanner() {
 
@@ -1015,7 +1192,9 @@
 
         scanner.clear();
 
-      } catch (error) {
+      }
+
+      catch (error) {
 
         console.log(
           "Stop scanner:",
@@ -1057,9 +1236,9 @@
     }
 
 
-    // =================================================
+    // =====================================================
     // QR BERHASIL DIBACA
-    // =================================================
+    // =====================================================
 
     function onScanSuccess(
 
@@ -1083,12 +1262,159 @@
       }
 
 
-      // =================================================
-      // CEK APAKAH QR SEDANG DIPROSES
-      // =================================================
+      // ===================================================
+      // PASTIKAN ID TERDAFTAR DI DATABASE LOKAL
+      // ===================================================
+
+      const nama =
+        STUDENTS[idSiswa];
+
+
+      if (!nama) {
+
+        handleUnknownQR(
+          idSiswa
+        );
+
+        return;
+
+      }
+
+
+      const sesi =
+        document
+          .getElementById(
+            "sesi"
+          )
+          .value;
+
+
+      const key =
+        sesi +
+        "|" +
+        idSiswa;
+
+
+      // ===================================================
+      // SUDAH SELESAI / SUDAH DIPROSES
+      // ===================================================
 
       if (
-        processingIds.has(
+        completedKeys.has(
+          key
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      // ===================================================
+      // MASIH MENUNGGU SERVER
+      // ===================================================
+
+      if (
+        pendingKeys.has(
+          key
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      // ===================================================
+      // KUNCI REQUEST
+      // ===================================================
+
+      pendingKeys.add(
+        key
+      );
+
+
+      // ===================================================
+      // BEEP SEGERA
+      // =====================================================
+
+      beep();
+
+
+      // ===================================================
+      // TAMPILKAN NAMA SEGERA
+      // ===================================================
+
+      showResult(
+
+        "processing",
+
+        "⏳ MENCATAT...",
+
+        nama,
+
+        `
+          ID: ${idSiswa}<br>
+          Sesi: ${sesi}<br>
+          QR terbaca — mengirim ke server...
+        `
+
+      );
+
+
+      // ===================================================
+      // MASUKKAN KE RIWAYAT SEGERA
+      // ===================================================
+
+      const historyId =
+        addHistory(
+
+          nama,
+
+          idSiswa,
+
+          sesi,
+
+          "Mencatat...",
+
+          "MENCATAT"
+
+        );
+
+
+      // ===================================================
+      // KIRIM KE APPS SCRIPT
+      // ===================================================
+
+      kirimPresensi(
+
+        idSiswa,
+
+        sesi,
+
+        key,
+
+        historyId
+
+      );
+
+    }
+
+
+    // =====================================================
+    // QR TIDAK DIKENAL
+    // =====================================================
+
+    let unknownLock =
+      new Set();
+
+
+    function handleUnknownQR(
+      idSiswa
+    ) {
+
+      if (
+        unknownLock.has(
           idSiswa
         )
       ) {
@@ -1098,71 +1424,75 @@
       }
 
 
-      // =================================================
-      // KUNCI QR
-      // =================================================
-
-      processingIds.add(
+      unknownLock.add(
         idSiswa
       );
 
-
-      // =================================================
-      // BEEP HANYA SEKALI
-      // =================================================
 
       beep();
 
 
-      // =================================================
-      // TAMPILKAN PROSES
-      // =================================================
+      showResult(
 
-      showProcessing(
-        idSiswa
+        "error",
+
+        "✕ QR TIDAK TERDAFTAR",
+
+        idSiswa,
+
+        "QR ini tidak ditemukan dalam daftar 31 siswa."
+
       );
 
 
-      // =================================================
-      // KIRIM KE SERVER
-      // =================================================
+      setTimeout(
 
-      kirimPresensi(
-        idSiswa
+        () => {
+
+          unknownLock.delete(
+            idSiswa
+          );
+
+        },
+
+        3000
+
       );
 
     }
 
 
-    // =================================================
+    // =====================================================
     // SCAN FAILURE
-    // =================================================
+    // =====================================================
 
     function onScanFailure(
       errorMessage
     ) {
 
-      // Tidak melakukan apa-apa.
-      // Kamera terus melakukan scan.
+      // Sengaja dikosongkan.
+      //
+      // Scanner terus mencoba membaca
+      // frame kamera berikutnya.
 
     }
 
 
-    // =================================================
+    // =====================================================
     // KIRIM PRESENSI
-    // =================================================
+    // =====================================================
 
     async function kirimPresensi(
-      idSiswa
+
+      idSiswa,
+
+      sesi,
+
+      key,
+
+      historyId
+
     ) {
-
-      const sesi =
-        document
-          .getElementById(
-            "sesi"
-          )
-          .value;
-
 
       try {
 
@@ -1204,13 +1534,13 @@
 
 
         console.log(
-          "API:",
+          "API RESPONSE:",
           result
         );
 
 
         // =================================================
-        // HADIR
+        // BERHASIL HADIR
         // =================================================
 
         if (
@@ -1222,6 +1552,28 @@
             "SUCCESS"
 
         ) {
+
+          completedKeys.add(
+            key
+          );
+
+
+          updateHistory(
+
+            historyId,
+
+            result.nama,
+
+            result.idSiswa,
+
+            result.sesi,
+
+            result.waktu,
+
+            "HADIR"
+
+          );
+
 
           showResult(
 
@@ -1236,21 +1588,6 @@
               Sesi: ${result.sesi}<br>
               Waktu: ${result.waktu}
             `
-
-          );
-
-
-          addHistory(
-
-            result.nama,
-
-            result.idSiswa,
-
-            result.sesi,
-
-            result.waktu,
-
-            "HADIR"
 
           );
 
@@ -1271,6 +1608,28 @@
 
         ) {
 
+          completedKeys.add(
+            key
+          );
+
+
+          updateHistory(
+
+            historyId,
+
+            result.nama,
+
+            result.idSiswa,
+
+            result.sesi,
+
+            result.waktu,
+
+            "SUDAH"
+
+          );
+
+
           showResult(
 
             "warning",
@@ -1289,28 +1648,13 @@
           );
 
 
-          addHistory(
-
-            result.nama,
-
-            result.idSiswa,
-
-            result.sesi,
-
-            result.waktu,
-
-            "SUDAH"
-
-          );
-
-
           return;
 
         }
 
 
         // =================================================
-        // QR TIDAK TERDAFTAR
+        // TIDAK TERDAFTAR DI SERVER
         // =================================================
 
         if (
@@ -1320,33 +1664,32 @@
 
         ) {
 
-          showResult(
+          updateHistory(
 
-            "error",
-
-            "✕ QR TIDAK TERDAFTAR",
-
-            "",
-
-            `
-              ID:
-              ${result.idSiswa}
-            `
-
-          );
-
-
-          addHistory(
+            historyId,
 
             "QR tidak terdaftar",
 
-            result.idSiswa,
+            idSiswa,
 
             sesi,
 
             "-",
 
             "DITOLAK"
+
+          );
+
+
+          showResult(
+
+            "error",
+
+            "✕ QR TIDAK TERDAFTAR",
+
+            idSiswa,
+
+            "Server tidak menemukan ID siswa tersebut."
 
           );
 
@@ -1357,7 +1700,7 @@
 
 
         // =================================================
-        // TIDAK AKTIF
+        // SISWA TIDAK AKTIF
         // =================================================
 
         if (
@@ -1367,34 +1710,37 @@
 
         ) {
 
-          showResult(
+          updateHistory(
 
-            "error",
-
-            "✕ SISWA TIDAK AKTIF",
-
-            result.nama || "",
-
-            `
-              ID:
-              ${result.idSiswa}
-            `
-
-          );
-
-
-          addHistory(
+            historyId,
 
             result.nama ||
-            "Siswa tidak aktif",
+              STUDENTS[idSiswa],
 
-            result.idSiswa,
+            idSiswa,
 
             sesi,
 
             "-",
 
             "DITOLAK"
+
+          );
+
+
+          showResult(
+
+            "error",
+
+            "✕ SISWA TIDAK AKTIF",
+
+            result.nama ||
+              STUDENTS[idSiswa],
+
+            `
+              ID:
+              ${idSiswa}
+            `
 
           );
 
@@ -1408,25 +1754,67 @@
         // ERROR LAIN
         // =================================================
 
+        updateHistory(
+
+          historyId,
+
+          STUDENTS[idSiswa],
+
+          idSiswa,
+
+          sesi,
+
+          "-",
+
+          "ERROR"
+
+        );
+
+
         showResult(
 
           "error",
 
           "✕ TERJADI KESALAHAN",
 
-          "",
+          STUDENTS[idSiswa],
 
           result.message ||
           "Server memberikan respons yang tidak dikenali."
 
         );
 
+      }
 
-      } catch (error) {
+
+      catch (error) {
 
         console.error(
-          "API error:",
+          "API ERROR:",
           error
+        );
+
+
+        // ================================================
+        // HAPUS LOCK
+        //
+        // Karena gagal, siswa boleh dicoba lagi.
+        // ================================================
+
+        updateHistory(
+
+          historyId,
+
+          STUDENTS[idSiswa],
+
+          idSiswa,
+
+          sesi,
+
+          "-",
+
+          "GAGAL"
+
         );
 
 
@@ -1436,11 +1824,12 @@
 
           "✕ KONEKSI GAGAL",
 
-          "",
+          STUDENTS[idSiswa],
 
           `
-            Tidak dapat menghubungi
-            server presensi.
+            Data belum dapat dikonfirmasi
+            oleh server.<br>
+            Silakan scan ulang.
           `
 
         );
@@ -1451,11 +1840,11 @@
       finally {
 
         // =================================================
-        // BUKA KUNCI QR
+        // REQUEST SELESAI
         // =================================================
 
-        processingIds.delete(
-          idSiswa
+        pendingKeys.delete(
+          key
         );
 
       }
@@ -1463,36 +1852,9 @@
     }
 
 
-    // =================================================
-    // TAMPILKAN PROCESSING
-    // =================================================
-
-    function showProcessing(
-      idSiswa
-    ) {
-
-      showResult(
-
-        "processing",
-
-        "⏳ MEMPROSES",
-
-        idSiswa,
-
-        `
-          <div class="spinner"></div>
-          QR terbaca.<br>
-          Mengirim data presensi...
-        `
-
-      );
-
-    }
-
-
-    // =================================================
-    // TAMPILKAN HASIL
-    // =================================================
+    // =====================================================
+    // HASIL SCAN
+    // =====================================================
 
     function showResult(
 
@@ -1507,27 +1869,31 @@
     ) {
 
       const result =
-        document.getElementById(
-          "result"
-        );
+        document
+          .getElementById(
+            "result"
+          );
 
 
       const resultStatus =
-        document.getElementById(
-          "resultStatus"
-        );
+        document
+          .getElementById(
+            "resultStatus"
+          );
 
 
       const resultName =
-        document.getElementById(
-          "resultName"
-        );
+        document
+          .getElementById(
+            "resultName"
+          );
 
 
       const resultDetail =
-        document.getElementById(
-          "resultDetail"
-        );
+        document
+          .getElementById(
+            "resultDetail"
+          );
 
 
       result.className =
@@ -1551,16 +1917,12 @@
         "block";
 
 
-      // =================================================
-      // HASIL BERTAHAN 5 DETIK
-      // =================================================
-
       clearTimeout(
-        window.resultTimer
+        resultTimer
       );
 
 
-      window.resultTimer =
+      resultTimer =
         setTimeout(
 
           () => {
@@ -1577,9 +1939,9 @@
     }
 
 
-    // =================================================
+    // =====================================================
     // TAMBAH RIWAYAT
-    // =================================================
+    // =====================================================
 
     function addHistory(
 
@@ -1595,7 +1957,14 @@
 
     ) {
 
-      historyData.unshift({
+      const item = {
+
+        idHistory:
+          Date.now() +
+          "_" +
+          Math.random()
+            .toString(36)
+            .substring(2),
 
         nama:
           nama,
@@ -1612,12 +1981,13 @@
         status:
           status
 
-      });
+      };
 
 
-      // =================================================
-      // MAKSIMAL 10 RIWAYAT
-      // =================================================
+      historyData.unshift(
+        item
+      );
+
 
       if (
         historyData.length >
@@ -1635,19 +2005,81 @@
 
       renderHistory();
 
+
+      return item.idHistory;
+
     }
 
 
-    // =================================================
+    // =====================================================
+    // UPDATE RIWAYAT
+    // =====================================================
+
+    function updateHistory(
+
+      historyId,
+
+      nama,
+
+      id,
+
+      sesi,
+
+      waktu,
+
+      status
+
+    ) {
+
+      const item =
+        historyData.find(
+
+          x =>
+            x.idHistory ===
+            historyId
+
+        );
+
+
+      if (!item) {
+
+        return;
+
+      }
+
+
+      item.nama =
+        nama;
+
+      item.id =
+        id;
+
+      item.sesi =
+        sesi;
+
+      item.waktu =
+        waktu;
+
+      item.status =
+        status;
+
+
+      renderHistory();
+
+    }
+
+
+    // =====================================================
     // RENDER RIWAYAT
-    // =================================================
+    // =====================================================
 
     function renderHistory() {
 
       const container =
-        document.getElementById(
-          "history"
-        );
+        document
+          .getElementById(
+            "history"
+          );
 
 
       if (
@@ -1678,12 +2110,16 @@
 
               return `
 
-                <div class="history-item">
+                <div
+                  class="history-item"
+                >
 
                   <div
                     class="history-number"
                   >
+
                     ${index + 1}
+
                   </div>
 
 
@@ -1694,26 +2130,34 @@
                     <div
                       class="history-name"
                     >
+
                       ${escapeHtml(
                         item.nama
                       )}
+
                     </div>
 
 
                     <div
                       class="history-detail"
                     >
+
                       ${escapeHtml(
                         item.id
                       )}
+
                       ·
+
                       ${escapeHtml(
                         item.sesi
                       )}
+
                       ·
+
                       ${escapeHtml(
                         item.waktu
                       )}
+
                     </div>
 
                   </div>
@@ -1722,9 +2166,11 @@
                   <div
                     class="history-status"
                   >
+
                     ${escapeHtml(
                       item.status
                     )}
+
                   </div>
 
                 </div>
@@ -1739,9 +2185,9 @@
     }
 
 
-    // =================================================
+    // =====================================================
     // ESCAPE HTML
-    // =================================================
+    // =====================================================
 
     function escapeHtml(
       text
@@ -1764,17 +2210,9 @@
     }
 
 
-    // =================================================
-    // CEGAH GANTI SESI SAAT KAMERA AKTIF
-    // =================================================
-
-    let sesiSebelumnya =
-      document
-        .getElementById(
-          "sesi"
-        )
-        .value;
-
+    // =====================================================
+    // GANTI SESI
+    // =====================================================
 
     document
       .getElementById(
