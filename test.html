@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Test Presensi XII MIA 2</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+
+    input,
+    select {
+      border: 1px solid #ccc;
+      background: white;
+    }
+
+    button {
+      margin-top: 22px;
+      border: none;
+      background: #1677ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .hasil {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .success {
+      background: #e8f7ed;
+      border: 1px solid #78c995;
+    }
+
+    .warning {
+      background: #fff5d9;
+      border: 1px solid #e0b84c;
+    }
+
+    .error {
+      background: #fdeaea;
+      border: 1px solid #e08a8a;
+    }
+
+    .status {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .nama {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .detail {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .loading {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Presensi Sholat</h1>
+
+  <div class="subtitle">
+    Kelas XII MIA 2
+  </div>
+
+
+  <label for="idSiswa">
+    ID Siswa
+  </label>
+
+  <input
+    id="idSiswa"
+    type="text"
+    value="MIA2-002"
+    placeholder="Contoh: MIA2-002"
+    autocomplete="off"
+  >
+
+
+  <label for="sesi">
+    Sesi Presensi
+  </label>
+
+  <select id="sesi">
+
+    <option value="DZUHUR">
+      DZUHUR
+    </option>
+
+    <option value="ASHAR">
+      ASHAR
+    </option>
+
+  </select>
+
+
+  <button
+    id="btnKirim"
+    onclick="kirimPresensi()"
+  >
+    KIRIM PRESENSI
+  </button>
+
+
+  <div
+    id="loading"
+    class="loading"
+  >
+    Mengirim data...
+  </div>
+
+
+  <div
+    id="hasil"
+    class="hasil"
+  >
+
+    <div
+      id="status"
+      class="status"
+    ></div>
+
+    <div
+      id="nama"
+      class="nama"
+    ></div>
+
+    <div
+      id="detail"
+      class="detail"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  // =================================================
+  // URL WEB APP APPS SCRIPT
+  // =================================================
+
+  const API_URL =
+    "https://script.google.com/macros/s/AKfycbzdYWzw0WAKHSfkwiOEiCppd2KLl2pmWoSFkyzSIhEOaRiKlEapUsC_RU3IWH8efnC_Zg/exec";
+
+
+  // =================================================
+  // FUNGSI KIRIM PRESENSI
+  // =================================================
+
+  async function kirimPresensi() {
+
+    const idSiswa =
+      document
+        .getElementById("idSiswa")
+        .value
+        .trim()
+        .toUpperCase();
+
+
+    const sesi =
+      document
+        .getElementById("sesi")
+        .value;
+
+
+    const btn =
+      document
+        .getElementById("btnKirim");
+
+
+    const loading =
+      document
+        .getElementById("loading");
+
+
+    const hasil =
+      document
+        .getElementById("hasil");
+
+
+    const status =
+      document
+        .getElementById("status");
+
+
+    const nama =
+      document
+        .getElementById("nama");
+
+
+    const detail =
+      document
+        .getElementById("detail");
+
+
+    // -----------------------------------------------
+    // VALIDASI
+    // -----------------------------------------------
+
+    if (!idSiswa) {
+
+      tampilkanHasil(
+        "error",
+        "ID SISWA KOSONG",
+        "",
+        "Masukkan ID siswa terlebih dahulu."
+      );
+
+      return;
+
+    }
+
+
+    // -----------------------------------------------
+    // TAMPILKAN LOADING
+    // -----------------------------------------------
+
+    btn.disabled = true;
+
+    loading.style.display = "block";
+
+
+    hasil.style.display = "none";
+
+
+    try {
+
+      // ---------------------------------------------
+      // KIRIM KE APPS SCRIPT
+      // ---------------------------------------------
+
+      const response =
+        await fetch(
+          API_URL,
+          {
+
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify({
+
+                idSiswa:
+                  idSiswa,
+
+                sesi:
+                  sesi
+
+              })
+
+          }
+        );
+
+
+      // ---------------------------------------------
+      // BACA RESPONSE
+      // ---------------------------------------------
+
+      const result =
+        await response.json();
+
+
+      console.log(
+        "Response API:",
+        result
+      );
+
+
+      // ---------------------------------------------
+      // JIKA BERHASIL
+      // ---------------------------------------------
+
+      if (
+        result.success === true &&
+        result.code === "SUCCESS"
+      ) {
+
+        tampilkanHasil(
+
+          "success",
+
+          "✓ HADIR",
+
+          result.nama,
+
+          `
+            ID: ${result.idSiswa}<br>
+            Sesi: ${result.sesi}<br>
+            Waktu: ${result.waktu}
+          `
+
+        );
+
+
+      }
+
+
+      // ---------------------------------------------
+      // SUDAH PRESENSI
+      // ---------------------------------------------
+
+      else if (
+        result.code ===
+        "ALREADY_PRESENT"
+      ) {
+
+        tampilkanHasil(
+
+          "warning",
+
+          "⚠ SUDAH PRESENSI",
+
+          result.nama,
+
+          `
+            ID: ${result.idSiswa}<br>
+            Sesi: ${result.sesi}<br>
+            Sudah tercatat pukul:
+            ${result.waktu}
+          `
+
+        );
+
+      }
+
+
+      // ---------------------------------------------
+      // QR TIDAK TERDAFTAR
+      // ---------------------------------------------
+
+      else if (
+        result.code ===
+        "NOT_REGISTERED"
+      ) {
+
+        tampilkanHasil(
+
+          "error",
+
+          "✕ QR TIDAK TERDAFTAR",
+
+          "",
+
+          `ID ${result.idSiswa} tidak ditemukan.`
+
+        );
+
+      }
+
+
+      // ---------------------------------------------
+      // SISWA TIDAK AKTIF
+      // ---------------------------------------------
+
+      else if (
+        result.code ===
+        "INACTIVE"
+      ) {
+
+        tampilkanHasil(
+
+          "error",
+
+          "✕ SISWA TIDAK AKTIF",
+
+          result.nama || "",
+
+          `ID: ${result.idSiswa}`
+
+        );
+
+      }
+
+
+      // ---------------------------------------------
+      // ERROR LAIN
+      // ---------------------------------------------
+
+      else {
+
+        tampilkanHasil(
+
+          "error",
+
+          "✕ TERJADI KESALAHAN",
+
+          "",
+
+          result.message ||
+          "Server mengembalikan hasil yang tidak dikenali."
+
+        );
+
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        "Error:",
+        error
+      );
+
+
+      tampilkanHasil(
+
+        "error",
+
+        "✕ KONEKSI GAGAL",
+
+        "",
+
+        `
+          Tidak dapat menghubungi
+          server presensi.<br><br>
+          ${error.message}
+        `
+
+      );
+
+    }
+
+
+    finally {
+
+      btn.disabled = false;
+
+      loading.style.display = "none";
+
+    }
+
+  }
+
+
+  // =================================================
+  // TAMPILKAN HASIL
+  // =================================================
+
+  function tampilkanHasil(
+    tipe,
+    teksStatus,
+    teksNama,
+    teksDetail
+  ) {
+
+    const hasil =
+      document.getElementById(
+        "hasil"
+      );
+
+
+    const status =
+      document.getElementById(
+        "status"
+      );
+
+
+    const nama =
+      document.getElementById(
+        "nama"
+      );
+
+
+    const detail =
+      document.getElementById(
+        "detail"
+      );
+
+
+    hasil.className =
+      "hasil " + tipe;
+
+
+    status.textContent =
+      teksStatus;
+
+
+    nama.textContent =
+      teksNama;
+
+
+    detail.innerHTML =
+      teksDetail;
+
+
+    hasil.style.display =
+      "block";
+
+  }
+
+</script>
+
+</body>
+</html>
