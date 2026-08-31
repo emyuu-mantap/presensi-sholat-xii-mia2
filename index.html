@@ -15,13 +15,11 @@
     content="#0f172a"
   >
 
-  <title>
-    Presensi Sholat XII MIA 2
-  </title>
+  <title>Presensi Sholat XII MIA 2</title>
 
 
   <!-- =================================================
-       LIBRARY QR SCANNER
+       QR SCANNER
        ================================================= -->
 
   <script
@@ -31,10 +29,6 @@
 
   <style>
 
-    /* =================================================
-       DASAR
-       ================================================= */
-
     * {
       box-sizing: border-box;
     }
@@ -42,16 +36,20 @@
 
     html,
     body {
+
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100%;
+
       font-family:
         Arial,
         Helvetica,
         sans-serif;
+
       background: #f1f5f9;
       color: #0f172a;
+
     }
 
 
@@ -65,24 +63,36 @@
        ================================================= */
 
     .header {
+
       background: #0f172a;
       color: white;
+
       padding: 18px 16px;
+
       text-align: center;
+
     }
 
 
     .header h1 {
+
       margin: 0;
+
       font-size: 23px;
+
       font-weight: 800;
+
     }
 
 
     .header p {
+
       margin: 6px 0 0;
+
       font-size: 15px;
+
       opacity: 0.85;
+
     }
 
 
@@ -91,10 +101,14 @@
        ================================================= */
 
     .container {
+
       width: 100%;
       max-width: 650px;
+
       margin: 0 auto;
+
       padding: 14px;
+
     }
 
 
@@ -103,12 +117,18 @@
        ================================================= */
 
     .card {
+
       background: white;
+
       border-radius: 18px;
+
       padding: 16px;
+
       margin-bottom: 14px;
+
       box-shadow:
         0 4px 18px rgba(0, 0, 0, 0.07);
+
     }
 
 
@@ -117,26 +137,41 @@
        ================================================= */
 
     label {
+
       display: block;
+
       font-weight: 700;
+
       margin-bottom: 8px;
+
     }
 
 
     /* =================================================
-       SESI
+       SELECT SESI
        ================================================= */
 
     select {
+
       width: 100%;
+
       height: 50px;
-      border: 1px solid #cbd5e1;
+
+      border:
+        1px solid #cbd5e1;
+
       border-radius: 12px;
+
       background: white;
+
       padding: 0 14px;
+
       font-size: 17px;
+
       font-weight: 700;
+
       color: #0f172a;
+
     }
 
 
@@ -145,32 +180,50 @@
        ================================================= */
 
     button {
+
       width: 100%;
+
       height: 50px;
+
       border: 0;
+
       border-radius: 12px;
+
       margin-top: 12px;
+
       font-size: 16px;
+
       font-weight: 800;
+
       cursor: pointer;
+
     }
 
 
     .btn-start {
+
       background: #2563eb;
+
       color: white;
+
     }
 
 
     .btn-stop {
+
       background: #e2e8f0;
+
       color: #0f172a;
+
     }
 
 
     button:disabled {
+
       opacity: 0.55;
+
       cursor: not-allowed;
+
     }
 
 
@@ -179,94 +232,143 @@
        ================================================= */
 
     #reader {
+
       width: 100%;
+
       overflow: hidden;
+
       border-radius: 16px;
+
       background: #000;
+
     }
 
 
     #reader video {
+
       width: 100% !important;
+
       height: auto !important;
+
       object-fit: cover;
+
     }
 
 
     /* =================================================
-       STATUS KAMERA
+       CAMERA STATUS
        ================================================= */
 
     .camera-status {
+
       margin-top: 10px;
+
       text-align: center;
+
       font-size: 14px;
+
       color: #64748b;
+
     }
 
 
     /* =================================================
-       HASIL UTAMA
+       HASIL
        ================================================= */
 
     .result {
+
       display: none;
+
       text-align: center;
+
       border-radius: 18px;
+
       padding: 22px 16px;
+
       margin-top: 14px;
+
     }
 
 
     .result.success {
+
       display: block;
+
       background: #dcfce7;
+
       border: 2px solid #86efac;
+
     }
 
 
     .result.warning {
+
       display: block;
+
       background: #fef3c7;
+
       border: 2px solid #fcd34d;
+
     }
 
 
     .result.error {
+
       display: block;
+
       background: #fee2e2;
+
       border: 2px solid #fca5a5;
+
     }
 
 
     .result.processing {
+
       display: block;
+
       background: #e0f2fe;
+
       border: 2px solid #7dd3fc;
+
     }
 
 
     .result-status {
+
       font-size: 28px;
+
       font-weight: 900;
+
       margin-bottom: 10px;
+
     }
 
 
     .result-name {
+
       font-size: 26px;
+
       font-weight: 900;
+
       line-height: 1.2;
+
       overflow-wrap: anywhere;
-      word-break: normal;
+
     }
 
 
     .result-detail {
+
       margin-top: 10px;
+
       font-size: 15px;
+
       line-height: 1.6;
+
       color: #334155;
+
     }
 
 
@@ -275,13 +377,22 @@
        ================================================= */
 
     .spinner {
+
       width: 28px;
+
       height: 28px;
+
       border: 4px solid #bae6fd;
+
       border-top-color: #0284c7;
+
       border-radius: 50%;
+
       margin: 0 auto 10px;
-      animation: spin 0.8s linear infinite;
+
+      animation:
+        spin 0.8s linear infinite;
+
     }
 
 
@@ -299,69 +410,110 @@
        ================================================= */
 
     .history-title {
+
       font-size: 18px;
+
       font-weight: 900;
+
       margin-bottom: 10px;
+
     }
 
 
     .history-empty {
+
       color: #64748b;
+
       text-align: center;
+
       padding: 12px;
+
     }
 
 
     .history-item {
+
       display: flex;
+
       align-items: center;
+
       gap: 10px;
+
       padding: 11px 0;
-      border-bottom: 1px solid #e2e8f0;
+
+      border-bottom:
+        1px solid #e2e8f0;
+
     }
 
 
     .history-item:last-child {
+
       border-bottom: 0;
+
     }
 
 
     .history-number {
+
       width: 30px;
+
       height: 30px;
+
       border-radius: 50%;
+
       background: #e2e8f0;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       font-weight: 800;
+
       flex-shrink: 0;
+
     }
 
 
     .history-info {
+
       flex: 1;
+
       min-width: 0;
+
     }
 
 
     .history-name {
+
       font-weight: 800;
+
       overflow-wrap: anywhere;
+
     }
 
 
     .history-detail {
+
       font-size: 13px;
+
       color: #64748b;
+
       margin-top: 3px;
+
     }
 
 
     .history-status {
+
       font-size: 12px;
+
       font-weight: 900;
+
       white-space: nowrap;
+
     }
 
 
@@ -370,26 +522,14 @@
        ================================================= */
 
     .info {
+
       font-size: 13px;
+
       line-height: 1.6;
+
       color: #64748b;
+
       text-align: center;
-    }
-
-
-    /* =================================================
-       DESKTOP
-       ================================================= */
-
-    @media (min-width: 700px) {
-
-      .container {
-        padding-top: 22px;
-      }
-
-      #reader {
-        max-height: 500px;
-      }
 
     }
 
@@ -422,7 +562,7 @@
 
 
     <!-- =================================================
-         PENGATURAN SESI
+         PENGATURAN
          ================================================= -->
 
     <section class="card">
@@ -430,6 +570,7 @@
       <label for="sesi">
         Sesi Presensi
       </label>
+
 
       <select id="sesi">
 
@@ -449,7 +590,9 @@
         class="btn-start"
         onclick="startScanner()"
       >
+
         📷 MULAI KAMERA
+
       </button>
 
 
@@ -459,7 +602,9 @@
         onclick="stopScanner()"
         disabled
       >
+
         ⏹ BERHENTI
+
       </button>
 
     </section>
@@ -473,11 +618,14 @@
 
       <div id="reader"></div>
 
+
       <div
         id="cameraStatus"
         class="camera-status"
       >
+
         Kamera belum dimulai.
+
       </div>
 
     </section>
@@ -497,10 +645,12 @@
         class="result-status"
       ></div>
 
+
       <div
         id="resultName"
         class="result-name"
       ></div>
+
 
       <div
         id="resultDetail"
@@ -520,9 +670,8 @@
         Riwayat Scan
       </div>
 
-      <div
-        id="history"
-      >
+
+      <div id="history">
 
         <div class="history-empty">
           Belum ada scan.
@@ -533,16 +682,12 @@
     </section>
 
 
-    <!-- =================================================
-         INFO
-         ================================================= -->
-
     <div class="info">
 
       Kamera tetap aktif setelah QR terbaca.<br>
 
-      Sistem akan mencegah scan QR yang sama
-      berulang-ulang.
+      QR yang sedang diproses
+      tidak akan dikirim ulang.
 
     </div>
 
@@ -554,7 +699,7 @@
 
 
     // =================================================
-    // KONFIGURASI API
+    // API
     // =================================================
 
     const API_URL =
@@ -569,30 +714,46 @@
 
     const QR_BOX_SIZE = 250;
 
-    const SAME_QR_COOLDOWN = 2500;
-
-    const RESULT_DISPLAY_TIME = 5000;
-
 
     // =================================================
-    // VARIABEL
+    // VARIABEL SCANNER
     // =================================================
 
     let scanner = null;
 
     let scannerRunning = false;
 
-    let lastScannedId = "";
 
-    let lastScannedTime = 0;
+    // =================================================
+    // QR YANG SEDANG DIPROSES
+    // =================================================
+    //
+    // Bukan cooldown berdasarkan waktu.
+    //
+    // QR dikunci selama request ke server
+    // masih berlangsung.
+    //
+
+    let processingIds =
+      new Set();
+
+
+    // =================================================
+    // RIWAYAT
+    // =================================================
 
     let historyData = [];
+
+
+    // =================================================
+    // AUDIO
+    // =================================================
 
     let audioContext = null;
 
 
     // =================================================
-    // MULAI AUDIO
+    // PREPARE AUDIO
     // =================================================
 
     function prepareAudio() {
@@ -640,27 +801,36 @@
       try {
 
         if (!audioContext) {
+
           prepareAudio();
+
         }
 
 
         const oscillator =
           audioContext.createOscillator();
 
+
         const gain =
           audioContext.createGain();
 
 
-        oscillator.type = "sine";
+        oscillator.type =
+          "sine";
 
-        oscillator.frequency.value = 880;
 
-        gain.gain.value = 0.15;
+        oscillator.frequency.value =
+          880;
+
+
+        gain.gain.value =
+          0.15;
 
 
         oscillator.connect(
           gain
         );
+
 
         gain.connect(
           audioContext.destination
@@ -671,11 +841,13 @@
 
 
         setTimeout(
+
           () => {
 
             oscillator.stop();
 
           },
+
           120
 
         );
@@ -693,7 +865,7 @@
 
 
     // =================================================
-    // MULAI SCANNER
+    // START SCANNER
     // =================================================
 
     async function startScanner() {
@@ -702,7 +874,9 @@
 
 
       if (scannerRunning) {
+
         return;
+
       }
 
 
@@ -785,6 +959,7 @@
         cameraStatus.textContent =
           "🟢 Kamera aktif — arahkan ke QR siswa.";
 
+
       } catch (error) {
 
         console.error(
@@ -810,10 +985,8 @@
           "",
 
           `
-            Pastikan izin kamera diberikan
-            kepada browser.
-            <br><br>
-            ${error}
+            Pastikan izin kamera
+            diberikan kepada browser.
           `
 
         );
@@ -830,7 +1003,9 @@
     async function stopScanner() {
 
       if (!scanner) {
+
         return;
+
       }
 
 
@@ -852,6 +1027,7 @@
 
       scanner =
         null;
+
 
       scannerRunning =
         false;
@@ -886,8 +1062,10 @@
     // =================================================
 
     function onScanSuccess(
+
       decodedText,
       decodedResult
+
     ) {
 
       const idSiswa =
@@ -899,27 +1077,20 @@
 
 
       if (!idSiswa) {
+
         return;
+
       }
 
 
-      const sekarang =
-        Date.now();
-
-
       // =================================================
-      // CEGAH QR YANG SAMA TERBACA BERULANG
+      // CEK APAKAH QR SEDANG DIPROSES
       // =================================================
 
       if (
-
-        idSiswa ===
-        lastScannedId &&
-
-        sekarang -
-        lastScannedTime <
-        SAME_QR_COOLDOWN
-
+        processingIds.has(
+          idSiswa
+        )
       ) {
 
         return;
@@ -927,22 +1098,24 @@
       }
 
 
-      lastScannedId =
-        idSiswa;
+      // =================================================
+      // KUNCI QR
+      // =================================================
 
-      lastScannedTime =
-        sekarang;
+      processingIds.add(
+        idSiswa
+      );
 
 
       // =================================================
-      // BEEP SEGERA
+      // BEEP HANYA SEKALI
       // =================================================
 
       beep();
 
 
       // =================================================
-      // TAMPILKAN PROSES SEGERA
+      // TAMPILKAN PROSES
       // =================================================
 
       showProcessing(
@@ -952,7 +1125,6 @@
 
       // =================================================
       // KIRIM KE SERVER
-      // TIDAK MENGHENTIKAN KAMERA
       // =================================================
 
       kirimPresensi(
@@ -963,15 +1135,15 @@
 
 
     // =================================================
-    // QR GAGAL DIBACA
+    // SCAN FAILURE
     // =================================================
 
     function onScanFailure(
       errorMessage
     ) {
 
-      // Sengaja tidak menampilkan error
-      // karena scanner terus melakukan pemindaian.
+      // Tidak melakukan apa-apa.
+      // Kamera terus melakukan scan.
 
     }
 
@@ -1245,7 +1417,7 @@
           "",
 
           result.message ||
-          "Server tidak memberikan respons yang dikenali."
+          "Server memberikan respons yang tidak dikenali."
 
         );
 
@@ -1275,11 +1447,24 @@
 
       }
 
+
+      finally {
+
+        // =================================================
+        // BUKA KUNCI QR
+        // =================================================
+
+        processingIds.delete(
+          idSiswa
+        );
+
+      }
+
     }
 
 
     // =================================================
-    // TAMPILKAN PROSES
+    // TAMPILKAN PROCESSING
     // =================================================
 
     function showProcessing(
@@ -1295,8 +1480,8 @@
         idSiswa,
 
         `
-          QR terbaca.
-          <br>
+          <div class="spinner"></div>
+          QR terbaca.<br>
           Mengirim data presensi...
         `
 
@@ -1367,7 +1552,7 @@
 
 
       // =================================================
-      // HASIL TIDAK DIHAPUS CEPAT
+      // HASIL BERTAHAN 5 DETIK
       // =================================================
 
       clearTimeout(
@@ -1385,7 +1570,7 @@
 
           },
 
-          RESULT_DISPLAY_TIME
+          5000
 
         );
 
@@ -1430,8 +1615,9 @@
       });
 
 
-      // Simpan maksimal 10
-      // riwayat terakhir
+      // =================================================
+      // MAKSIMAL 10 RIWAYAT
+      // =================================================
 
       if (
         historyData.length >
@@ -1579,8 +1765,16 @@
 
 
     // =================================================
-    // CEGAH PINDAH SESI SAAT KAMERA AKTIF
+    // CEGAH GANTI SESI SAAT KAMERA AKTIF
     // =================================================
+
+    let sesiSebelumnya =
+      document
+        .getElementById(
+          "sesi"
+        )
+        .value;
+
 
     document
       .getElementById(
@@ -1601,14 +1795,17 @@
             );
 
 
-            // Kembalikan ke nilai
-            // sebelumnya tidak mudah
-            // jika langsung berubah.
-            // Karena itu kita biarkan
-            // pergantian hanya saat
-            // kamera dihentikan.
+            this.value =
+              sesiSebelumnya;
+
+
+            return;
 
           }
+
+
+          sesiSebelumnya =
+            this.value;
 
         }
 
